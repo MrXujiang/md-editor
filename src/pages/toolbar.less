@@ -1,0 +1,60 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3b82f6;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: white;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+  a {
+    text-decoration: none;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 6px;
+    }
+  }
+}
+
+.button:hover {
+  background: #f8fafc;
+}
+
+.button.primary {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.button.primary:hover {
+  background: #2563eb;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

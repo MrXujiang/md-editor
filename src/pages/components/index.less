@@ -1,0 +1,208 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.editor {
+  flex: 1;
+  overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+.placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+}
+
+.placeholder button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.placeholder button:hover {
+  background: #2563eb;
+}
+
+/* ByteMD 编辑器样式覆盖 */
+:global(.bytemd) {
+  border: none !important;
+}
+
+:global(.bytemd-toolbar) {
+  border-bottom: 1px solid #e2e8f0 !important;
+  background: #f8fafc !important;
+}
+
+:global(.bytemd-status) {
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+:global(.markdown-body) {
+  padding: 1rem !important;
+}
+
+/* 无序列表样式 */
+:global(.markdown-body ul) {
+  padding-left: 1.5em !important;
+  margin: 0.8em 0 !important;
+  list-style-type: disc !important;
+  display: block !important;
+}
+
+:global(.markdown-body ul ul) {
+  list-style-type: circle !important;
+}
+
+:global(.markdown-body ul ul ul) {
+  list-style-type: square !important;
+}
+
+:global(.markdown-body li) {
+  position: relative !important;
+  padding-left: 0.5em !important;
+  margin: 0.5em 0 !important;
+  line-height: 1.8 !important;
+  width: 100%;
+}
+
+:global(.markdown-body li::marker) {
+  color: #666 !important;
+}
+
+/* 编辑器中的列表样式 */
+:global(.bytemd-editor .cm-list-1) {
+  color: #666 !important;
+}
+
+:global(.bytemd-editor .cm-list-2) {
+  color: #888 !important;
+}
+
+:global(.bytemd-editor .cm-list-3) {
+  color: #aaa !important;
+}
+
+/* 确保列表项内容正确对齐 */
+:global(.markdown-body li > p) {
+  margin: 0.3em 0 !important;
+  display: inline-block !important;
+}
+
+/* 列表项之间的间距 */
+:global(.markdown-body li + li) {
+  margin-top: 0.3em !important;
+}
+
+/* 嵌套列表的间距 */
+:global(.markdown-body li > ul),
+:global(.markdown-body li > ol) {
+  margin: 0.3em 0 0.3em 1.5em !important;
+}
+
+/* 预览区域中的列表样式 */
+:global(.bytemd-preview ul) {
+  margin-left: 0 !important;
+  padding-left: 1.5em !important;
+}
+
+/* 编辑器工具栏按钮样式 */
+:global(.bytemd-toolbar-icon) {
+  padding: 4px !important;
+  margin: 0 2px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+}
+
+:global(.bytemd-toolbar-icon:hover) {
+  background-color: #f0f0f0 !important;
+}
+
+:global(.bytemd-toolbar-icon svg) {
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+/* 改进任务列表样式 */
+:global(.markdown-body .task-list-item) {
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin: 0.5em 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+:global(.markdown-body .task-list-item input[type="checkbox"]) {
+  margin: 0.25em 0.5em 0 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* 预览区域内容样式 */
+:global(.bytemd-preview) {
+  padding: 1rem !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+:global(.bytemd-preview .markdown-body) {
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* 编辑器内容样式 */
+:global(.bytemd-editor) {
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace !important;
+  line-height: 1.8 !important;
+}
+
+/* 图片样式优化 */
+:global(.markdown-body img) {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1em 0 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 确保列表项之间有足够的空间 */
+:global(.markdown-body li p) {
+  margin-bottom: 0.5em !important;
+}
+
+:global(.markdown-body li:last-child p) {
+  margin-bottom: 0 !important;
+}
+
+/* 嵌套列表的缩进和间距 */
+:global(.markdown-body li > ul),
+:global(.markdown-body li > ol) {
+  margin-top: 0.25em !important;
+  margin-bottom: 0.25em !important;
+}
+
+:global(.bytemd) {
+  height: calc(100vh - 120px) !important;
+}
+
+:global(.bytemd-tippy-right:last-child) {
+  display: none;
+}
