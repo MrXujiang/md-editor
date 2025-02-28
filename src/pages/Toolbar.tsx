@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './toolbar.less';
-
 interface ToolbarProps {
     onNew: () => void;
     onSave: () => void;
+    onExportMd: () => void;
     disabled: boolean;
 }
 
-export const Toolbar: React.FC<ToolbarProps> = ({ onNew, onSave, disabled }) => {
+export const Toolbar: React.FC<ToolbarProps> = ({ onNew, onSave, onExportMd, disabled }) => {
     return (
         <div className={styles.toolbar}>
             <div className={styles.brand}>
@@ -34,6 +34,13 @@ export const Toolbar: React.FC<ToolbarProps> = ({ onNew, onSave, disabled }) => 
                     保存
                 </button>
                 <button
+                    className={classNames(styles.button, styles.primary)}
+                    onClick={onExportMd}
+                    disabled={disabled}
+                >
+                    导出Md
+                </button>
+                <button
                     className={classNames(styles.button)}
                 >
                     <a href="https://flowmix.turntip.cn" target="_blank">
@@ -44,7 +51,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ onNew, onSave, disabled }) => 
                             <path fill="#24235C" d="M205.27.008L102.635 203h50.73L256 .008z"/>
                             <path fill="#E55CFF" d="M204.982 202.999h50.731V.007h-50.731z"/>
                         </svg>
-                         多模态文档
+                        多模态文档
                     </a>
 
                 </button>

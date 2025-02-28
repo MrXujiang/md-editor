@@ -29,6 +29,7 @@ pnpm install
 1. 创建新文档 `Cmd/Ctrl + N`
 2. 输入 `# 标题` 开始创作
 3. 按 `Cmd/Ctrl + P` 切换预览模式
+4. 支持一键导出为Markdown
 
 ## 🧑💻 开发者指南
 

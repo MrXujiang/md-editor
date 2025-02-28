@@ -6,6 +6,7 @@ import math from '@bytemd/plugin-math';
 import breaks from '@bytemd/plugin-breaks';
 import frontmatter from '@bytemd/plugin-frontmatter';
 import mermaid from '@bytemd/plugin-mermaid';
+import { exportMarkdown } from '@/utils';
 import zhHans from 'bytemd/locales/zh_Hans.json';
 import 'github-markdown-css';
 import 'highlight.js/styles/vs.css';
@@ -19,15 +20,6 @@ import { Notification } from '../Notification';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import styles from './index.less';
 
-// 添加图片处理函数
-const convertImageToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result as string);
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-    });
-};
 
 // 配置 ByteMD 插件
 const plugins = [
@@ -191,12 +183,18 @@ function hello() {
         setTimeout(() => setNotification(null), 3000);
     };
 
+    const handleExportMd = () => {
+        console.log(currentDoc)
+        exportMarkdown(currentDoc?.content, currentDoc?.title)
+    }
+
     return (
         <div className={styles.container}>
             <Toolbar
                 onNew={createNewDoc}
                 onSave={saveDoc}
                 disabled={!currentDoc}
+                onExportMd={handleExportMd}
             />
 
             <div className={styles.content}>
